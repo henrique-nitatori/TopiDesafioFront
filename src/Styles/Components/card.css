@@ -1,0 +1,73 @@
+#card {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 47.8125rem;
+    min-height: 180px;
+    background: transparent;
+    border: 1px #CCE0FD solid;
+    border-radius: 8px;
+    padding:  0.875rem;
+}
+#card header {
+    width: 100%;
+    display: flex;
+}
+#card header img {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50px;
+}
+#card header .profile {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+#card header .profile .profile-name {
+    font-size: 1.125rem;
+    color: var(--primary-color);
+}
+#card header .profile .date {
+    font-size: 0.875rem;
+    color: #B7B8B9;
+    padding-top: 5px;
+}
+#card .content .description {
+    padding-left: 4.375rem;
+    padding-right: 4.375rem;
+    display: block; 
+    display: -webkit-box;
+    font-size: 0.875rem;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#card .project-status {
+    position: absolute;
+    bottom: 7px;
+    right: 14px;
+    display: flex;
+}
+#card .project-status div {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+@media(max-width: 375px) {
+    #card .content .description{
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-top: 5px;
+        -webkit-line-clamp: 7;
+
+    }
+    #card .project-status {
+        bottom: 0px;
+    }
+    #card {
+        padding: 0.4375rem;
+    }
+}

@@ -1,0 +1,71 @@
+#index {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+#index div {
+    margin-top: 100px;
+    margin-bottom: 81px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+#index section {
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+#index button {
+    width: 100%;
+    max-width: 201px;
+    height: 45px;
+    border-radius: 8px;
+    outline: none;
+    background: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em; 
+    border: none;
+    color:white;
+    cursor: pointer;
+    margin-top: 67px;
+    transition: 0.3s;
+}
+#index button:hover {
+    background: #00559F;
+}
+#index button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}
+#index section label {
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 705px;
+}
+#index section input[type=text] {
+    margin-top: 8px;
+    position: relative;
+    width: 100%;
+    height: 57px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px #A5A3A3 solid;
+    padding:  0 20px 0 20px;
+    transition: 0.3s;
+}
+#index section input[type=text]:focus {
+    border-color: #006DCC;
+    border-width: 2px;
+    filter: drop-shadow(0px 0px 3px rgba(0, 109, 204, 0.25));
+}
