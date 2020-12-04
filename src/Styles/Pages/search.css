@@ -24,6 +24,10 @@
     transition: 0.3s;
     background: transparent;
 }
+#error-msg {
+  font-size: 1.4rem;
+  color: rgb(247, 151, 151);
+}
 ::-webkit-input-placeholder {
     color:  #FFF;
  }

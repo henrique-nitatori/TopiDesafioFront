@@ -31,6 +31,7 @@ const Search: React.FC = () => {
   const [showLoading, setShowLoading] = useState(false)
   const [scrollRatio, setScrollRatio] = useState<Number>(0)
   const [language, setLanguage] = useState<string>('')
+  const [error, setError] = useState<boolean>(false)
   const divInfiniteScroll = useRef<HTMLDivElement>(null)
   const query = useQuery()
   const history = useHistory()
@@ -60,7 +61,6 @@ const Search: React.FC = () => {
           setShowLoading(true)
           axios.get(`https://api.github.com/search/repositories?q=language:${queryInUrl}&sort=stars&page=${novaPagina}&per_page=20`)
             .then(value => {
-
                   const repositoriesisAlreadyExists = value.data.items
 
                   let repositoriesList: IRepositories[] = []
@@ -90,14 +90,18 @@ const Search: React.FC = () => {
 
               setRepositories([...repositories, ...repositoriesList])
               setShowLoading(false)
+            },() => {
+              setShowLoading(false)
+              setError(true)
             })
         })
       }
-  }, [scrollRatio])
+  }, [scrollRatio, error])
 
   function handleSearch() {
     history.push(`/search?language=${language}`)
     const newRepositorie:IRepositories[] = []
+    setError(false)
     setRepositories(newRepositorie)
     setPageNumber(0)
   } 
@@ -123,6 +127,7 @@ const Search: React.FC = () => {
             ))}
 
             <div ref={divInfiniteScroll}></div>
+            {error && <h2 id="error-msg">Nenhum repositório encontrado com essa linguagem</h2>}
             {showLoading && <Spinner />}
           </div>
       </Layout>
